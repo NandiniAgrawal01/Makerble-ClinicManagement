@@ -178,6 +178,68 @@ Frontend will run at: `http://localhost:5173`
 
 ---
 
+## 🧪 Testing
+
+This project includes unit tests for backend functionality such as user authentication and patient management.
+
+### ✅ Prerequisites
+
+Before running the tests, ensure the following:
+
+- Go is installed (v1.20+ recommended)
+- A **PostgreSQL** instance is running
+- A dedicated **test database** exists
+- The `.env` file is correctly configured for testing
+
+Example `.env` file:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=clinic_test_db
+JWT_SECRET=your_jwt_secret
+
+> ⚠️ Ensure the `clinic_test_db` exists in PostgreSQL. You can create it with:
+> 
+> ```sql
+> CREATE DATABASE clinic_test_db;
+> ```
+
+---
+
+### 📂 Test Files
+
+| File Name                                | Purpose                                |
+|------------------------------------------|----------------------------------------|
+| `controllers/auth_controller_test.go`    | Tests login functionality with JWT     |
+| `controllers/patient_controller_test.go` | Tests adding and fetching patients     |
+
+---
+
+### ▶️ Running Tests
+
+To execute all backend test cases, run:
+```go test ./controllers/...```
+
+This command runs all test files within the controllers/ directory.
+
+✅ Sample Output
+If all tests pass, the output will look like:
+
+```ok  	clinicapp/controllers	0.524s```
+
+If a test fails, you will see which test failed along with an error message and the line number.
+
+🛠 Notes
+It's recommended to use a dedicated test database to avoid corrupting production or development data.
+
+Make sure your test .env file matches the expected configuration and the DB_NAME refers to your test database.
+
+If needed, adjust the test files to avoid inserting duplicate entries (e.g. unique usernames).
+
+---
+
 ## 📝 License
 
 This project is for educational and demonstration purposes.
