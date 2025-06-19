@@ -220,23 +220,22 @@ JWT_SECRET=your_jwt_secret
 ### ▶️ Running Tests
 
 To execute all backend test cases, run:
-```go test ./controllers/...```
-
+```bash
+go test ./controllers/...
+```
 This command runs all test files within the controllers/ directory.
 
 ✅ Sample Output
 If all tests pass, the output will look like:
-
-```ok  	clinicapp/controllers	0.524s```
-
+```bash
+ok  	clinicapp/controllers	0.524s
+```
 If a test fails, you will see which test failed along with an error message and the line number.
 
 🛠 Notes
-It's recommended to use a dedicated test database to avoid corrupting production or development data.
-
-Make sure your test .env file matches the expected configuration and the DB_NAME refers to your test database.
-
-If needed, adjust the test files to avoid inserting duplicate entries (e.g. unique usernames).
+- It's recommended to use a dedicated test database to avoid corrupting production or development data.
+- Make sure your test .env file matches the expected configuration and the DB_NAME refers to your test database.
+- If needed, adjust the test files to avoid inserting duplicate entries (e.g. unique usernames).
 
 ---
 
